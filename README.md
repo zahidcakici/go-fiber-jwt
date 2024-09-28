@@ -71,8 +71,8 @@ go-fiber-jwt-example/
 - [`model/`](model): Contains the data models.
 - [`router/`](router): Contains the application routes.
 - [`utils/`](utils)
-  - [`password_generator.go`](utils/password_generator.go): Contains the `GeneratePassword` and `ComparePassword` function.
-  - [`token_generator`](utils/token_generator.go): Contains the `GenerateToken` and `VerifyToken` function.
+  - [`password.go`](utils/password.go): Contains the `GeneratePassword` and `ComparePassword` function.
+  - [`token.go`](utils/token.go): Contains the `GenerateToken` and `VerifyToken` function.
 - [`main.go`](main.go): The entry point of the application.
 
 ## License
