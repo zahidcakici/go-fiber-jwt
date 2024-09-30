@@ -6,8 +6,6 @@ This repository contains an example project demonstrating how to use JWT (JSON W
 
 ```
 go-fiber-jwt-example/
-├── config/
-│   ├── config.go
 ├── controller/
 │   ├── auth.go
 │   ├── book.go
@@ -61,7 +59,6 @@ go-fiber-jwt-example/
 
 ### Project Structure
 
-- [`config/`](config): Contains the application configuration.
 - [`controller/`](controller)
   - [`auth.go`](controller/auth.go): Contains the authentication handlers.
   - [`book.go`](controller/book.go): Contains the book handlers.

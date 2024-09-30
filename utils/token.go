@@ -1,7 +1,7 @@
 package utils
 
 import (
-	"go-fiber-jwt-example/config"
+	"os"
 
 	"github.com/golang-jwt/jwt/v5"
 )
@@ -11,7 +11,7 @@ func GenerateToken(id uint) (string, error) {
 		"user_id": id,
 	})
 
-	t, err := token.SignedString([]byte(config.Get("JWT_SECRET")))
+	t, err := token.SignedString([]byte(os.Getenv("JWT_SECRET")))
 	if err != nil {
 		return "", err
 	}
@@ -21,7 +21,7 @@ func GenerateToken(id uint) (string, error) {
 
 func VerifyToken(tokenString string) (bool, error) {
 	token, err := jwt.Parse(tokenString, func(token *jwt.Token) (interface{}, error) {
-		return []byte(config.Get("JWT_SECRET")), nil
+		return []byte(os.Getenv("JWT_SECRET")), nil
 	})
 	if err != nil {
 		return false, err
