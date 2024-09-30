@@ -2,8 +2,8 @@ package database
 
 import (
 	"fmt"
-	"go-fiber-jwt-example/config"
 	"go-fiber-jwt-example/model"
+	"os"
 
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
@@ -15,8 +15,8 @@ var DB *gorm.DB
 // Connect to the database
 func Connect() {
 	dsn := fmt.Sprintf(
-		"host=localhost port=%s user=%s password=%s dbname=%s sslmode=disable",
-		config.Get("DB_PORT"), config.Get("DB_USER"), config.Get("DB_PASSWORD"), config.Get("DB_NAME"),
+		"host=%s port=%s user=%s password=%s dbname=%s sslmode=disable",
+		os.Getenv("DB_HOST"), os.Getenv("DB_PORT"), os.Getenv("DB_USER"), os.Getenv("DB_PASSWORD"), os.Getenv("DB_NAME"),
 	)
 
 	var err error
