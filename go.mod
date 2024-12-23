@@ -1,6 +1,6 @@
 module go-fiber-jwt-example
 
-go 1.22.5
+go 1.23
 
 require (
 	github.com/gofiber/contrib/jwt v1.0.10

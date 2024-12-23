@@ -2,9 +2,11 @@ version: '3.8'
 
 services:
   app:
-    build: .
+    build: 
+      context: .
+      dockerfile: dockerfiles/Dockerfile1
     container_name: fiber-jwt-app
-    image: fiber-jwt-app-6
+    image: fiber-jwt-app-1
     depends_on:
       - db
     env_file:
