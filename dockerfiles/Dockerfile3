@@ -4,7 +4,7 @@ WORKDIR /app
 
 COPY go.mod go.sum ./
 RUN go mod download
-RUN rm -rf /go/pkg/mod /root/.cache/go-build
+RUN rm -rf /go/pkg/mod
 
 COPY . .
 
